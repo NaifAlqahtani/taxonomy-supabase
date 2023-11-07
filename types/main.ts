@@ -22,12 +22,3 @@ export interface User {
   updated_at: string | null
 }
 
-export interface Post {
-  id: string /* primary key */
-  title: string
-  content: JSON | null
-  published: boolean
-  created_at: string
-  updated_at: string
-  author_id: string
-}
