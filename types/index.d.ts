@@ -17,15 +17,15 @@ export type SidebarNavItem = {
   external?: boolean
   icon?: keyof typeof Icons
 } & (
-  | {
+    | {
       href: string
       items?: never
     }
-  | {
+    | {
       href?: string
       items: NavLink[]
     }
-)
+  )
 
 export type SiteConfig = {
   name: string
@@ -37,29 +37,11 @@ export type SiteConfig = {
     github: string
   }
 }
-
-export type DocsConfig = {
-  mainNav: MainNavItem[]
-  sidebarNav: SidebarNavItem[]
-}
-
-export type MarketingConfig = {
-  mainNav: MainNavItem[]
-}
-
 export type DashboardConfig = {
   mainNav: MainNavItem[]
   sidebarNav: SidebarNavItem[]
 }
-
-export type SubscriptionPlan = {
-  name: string
-  description: string
-  stripe_price_id: string
+export type HomeConfig = {
+  mainNav: MainNavItem[]
+  sidebarNav: SidebarNavItem[]
 }
-
-export type UserSubscriptionPlan = SubscriptionPlan &
-  Pick<User, "stripe_customer_id" | "stripe_subscription_id"> & {
-    stripe_current_period_end: number
-    isPro: boolean
-  }
